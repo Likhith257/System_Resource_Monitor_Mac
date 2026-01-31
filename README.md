@@ -1,10 +1,13 @@
 # System Resource Monitor for macOS
 
+> **⚠️ Work in Progress**: This is an active development project. The Python implementation is functional, with native Swift/SwiftUI support planned for future releases.
+
 A comprehensive, real-time system resource monitoring application for macOS built with Python. Monitor CPU, memory, disk, network, and battery usage with beautiful real-time graphs and detailed metrics.
 
 ![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)
 ![Platform](https://img.shields.io/badge/platform-macOS-lightgrey.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Status](https://img.shields.io/badge/status-WIP-yellow.svg)
 
 ## Features
 
@@ -165,24 +168,31 @@ self.monitor = SystemMonitor(history_size=60)  # Change buffer size
 
 Edit the color scheme in `src/gui.py`:
 ```python
-self.cpu_line, = self.ax_cpu.plot([], [], color='#51cf66', linewidth=2)
-```
+selProject Status & Roadmap
 
-## Future Enhancements
+### Current Features (Python Implementation) ✅
+- [x] Core monitoring functionality with psutil
+- [x] Real-time GUI dashboard with graphs
+- [x] Process manager with sorting
+- [x] Menu bar widget integration
+- [x] Live CPU, memory, disk, network, battery monitoring
 
-### Python Version
-- [x] Core monitoring functionality
-- [x] Real-time GUI with graphs
-- [x] Process manager
-- [ ] Menu bar integration
-- [ ] Alerts and notifications
-- [ ] Historical data export (CSV/JSON)
-- [ ] Custom themes
-- [ ] Resource usage alerts
+### Upcoming Features (Python) 🚧
+- [ ] System alerts and notifications for resource thresholds
+- [ ] Historical data logging and export (CSV/JSON)
+- [ ] Custom color themes
+- [ ] Per-app resource tracking
+- [ ] Configurable refresh rates
+- [ ] Startup launch options
 
-### macOS Native Version (Planned)
-- [ ] Swift + SwiftUI rewrite
-- [ ] Native macOS menu bar app
+### Future: Native macOS Version (Swift/SwiftUI) 🔮
+- [ ] Complete Swift + SwiftUI rewrite for native performance
+- [ ] Native macOS menu bar app with system integration
+- [ ] macOS Widgets (Desktop & Notification Center)
+- [ ] Enhanced battery and thermal monitoring via IOKit
+- [ ] Accessibility features and VoiceOver support
+- [ ] Sandboxed App Store distribution
+- [ ] M-series chip optimizationapp
 - [ ] Widgets support
 - [ ] Better battery and thermal monitoring
 - [ ] Accessibility features
@@ -214,7 +224,25 @@ brew install python-tk
 The monitoring itself uses minimal CPU (~1-2%). If you experience high usage:
 - Increase the update interval
 - Reduce history buffer size
-- Close other resource-intensive applications
+## Development Status
+
+**Current Phase**: Python Implementation (Active Development)  
+**Next Phase**: Swift/SwiftUI Native App (Planned)
+
+This project is currently in active development. The Python version is functional and being enhanced with additional features. A native Swift implementation is planned for the future to provide better macOS integration and performance.
+
+### Contributing
+
+This is a work-in-progress project. Contributions, suggestions, and feedback are welcome! Feel free to:
+- Report bugs or issues
+- Suggest new features
+- Submit pull requests
+- Share your experience using the tool
+
+---
+
+**Current Implementation**: Python (psutil + tkinter/rumps)  
+**Planned Implementation**: Swift + SwiftUI (native macOS)
 
 ## Acknowledgments
 
